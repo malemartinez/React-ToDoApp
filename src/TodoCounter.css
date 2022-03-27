@@ -1,0 +1,14 @@
+.title-container{
+  padding: 10px;
+  text-align: center;
+}
+.title-container h1{
+  font-size: 4rem;
+}
+
+.Counter-Title{
+  font-size: 1.6rem;
+  color: black;
+  
+  padding: 10px;
+}

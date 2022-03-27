@@ -1,0 +1,23 @@
+.section-container{
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+}
+
+.list-container{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  height: 100%;
+  
+}
+.list-container li{
+  margin: 10px 0px;
+  border-radius: 10px;
+  background-color:#0f1c3070 ;
+  box-shadow: 2px 2px 10px #0f1c3071;
+  /* border-bottom: 2px solid #0f1c304b; */
+
+}

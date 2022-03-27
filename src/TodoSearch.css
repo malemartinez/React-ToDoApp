@@ -1,0 +1,18 @@
+.searchContainer{
+  display: flex;
+  justify-content: center;
+}
+.searchBox{
+  width: 90%;
+  height: 30px;
+  color: white;
+  outline-color: #c0d0ef;
+  border: none;
+  background-color:#304a6e ;
+  padding: 20px;
+  margin-bottom:10px ;
+  border-radius: 20px;
+}
+::placeholder{
+  color: #c2c6ce;
+}

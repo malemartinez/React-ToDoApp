@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React from "react";
+import { useState } from "react/cjs/react.production.min";
 import './App.css';
+import AppUI from './AppUI.js';
+import { TodoProvider } from "./TocoContext";
 
+
+
+// const DefaulToDos = [
+//   {
+//     text: 'Hacer el almuerzo', 
+//     completed:true
+//   },
+//   {
+//     text: 'Ir al medico', 
+//     completed:false
+//   },
+//   {
+//     text: 'Pagar factura luz', 
+//     completed:false,
+//   }
+// ]
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    <TodoProvider>
+      <AppUI />
+
+    </TodoProvider>
+
+   );
 }
 
 export default App;

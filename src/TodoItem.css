@@ -1,0 +1,21 @@
+.todoItem{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 1.6rem;
+}
+
+.TodoItem-p--complete {
+  text-decoration: line-through;
+  color: #c2c6ce;
+}
+.Icon {
+  cursor: pointer;
+  font-weight: bolder;
+}
+.Icon-check--active {
+  color: #003a02;
+}
+.Icon-delete:hover {
+  color: red;
+}
