@@ -1,5 +1,6 @@
-import React from "react";
+import React , {useContext} from "react";
 import "./TodoSearch.css"
+import { TodoContext } from "./TodoContext";
 
 // antigua forma de hacer componentes en react
 
@@ -21,7 +22,10 @@ import "./TodoSearch.css"
 
 
 
-function TodoSearch({ searchValue, setSearchValue }){
+function TodoSearch(){
+
+  // llamanos a useContext para usar las value
+  const { searchValue, setSearchValue } = useContext(TodoContext);
 
   // const [searchValue, setSearchValue]= React.useState('')
 

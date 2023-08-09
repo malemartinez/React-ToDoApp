@@ -6,10 +6,15 @@ const TodoContext = React.createContext()
 
 function TodoProvider(props){
 
-  const [ToDos, saveToDos , loading ,error ] = useLocalStorage('TODOS_V1', [])
+  const {
+     item : ToDos,
+     saveItem : saveToDos,
+      loading , 
+      error
+   } = useLocalStorage('TODOS_V1', [])
  
   // vamos a definir un estado para la busqueda de Todos
-  const [searchValue, setSearchValue]= React.useState('')
+  const [searchValue, setSearchValue]= React.useState('');
   // vamos a contar cuantos Todos estan hechos, primero creamos el estado de todos
   
   // vamos a contar la cantidad de todos hechos
@@ -59,20 +64,22 @@ function TodoProvider(props){
     const newTodos = ToDos.filter(todo=>todo.name !== name)
     saveToDos(newTodos )
   }
-
-  <TodoContext.Provider value={ {
-    error,
-    loading,
-    totalTodos,
-    completedTodo,
-    searchValue, 
-    setSearchValue ,
-    searchedTodos, 
-    completeTodo, 
-    deleteToDo,
-  } } >
-    {/* aqui deben vivir todos los componenets que quieran acceder a las props */}
-  </TodoContext.Provider>
+  return(
+    <TodoContext.Provider value={ {
+      error,
+      loading,
+      totalTodos,
+      completedTodo,
+      searchValue, 
+      setSearchValue ,
+      searchedTodos, 
+      completeTodo, 
+      deleteToDo,
+    } } >
+      {props.children}
+      {/* aqui deben vivir todos los componenets que quieran acceder a las props */}
+    </TodoContext.Provider>
+  );
 }
 
 export { TodoContext , TodoProvider };

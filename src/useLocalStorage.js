@@ -1,12 +1,12 @@
-import React from 'react';
-import { useState } from 'react/cjs/react.production.min';
+import React, {useState} from 'react';
+//import { useState } from 'react/cjs/react.production.min';
 
 
 function useLocalStorage (itemName , initialValue){
 
-  const [ item, setItem]= React.useState(initialValue)
-  const { loading, setLoading} = useState(true)
-  const { error, setError} = useState(false)
+  const [ item, setItem ]= React.useState(initialValue)
+  const [ loading, setLoading] = useState(true)
+  const [ error, setError] = useState(false)
 
   React.useEffect( () =>{
     setTimeout(()=>{

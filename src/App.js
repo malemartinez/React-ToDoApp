@@ -1,8 +1,7 @@
 import React from "react";
-import { useState } from "react/cjs/react.production.min";
 import './App.css';
 import AppUI from './AppUI.js';
-import { TodoProvider } from "./TocoContext";
+import { TodoProvider } from "./TodoContext";
 
 
 
