@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 
 const TodoContext = React.createContext()
@@ -6,12 +6,29 @@ const TodoContext = React.createContext()
 
 function TodoProvider(props){
 
+  const DefaulToDos = [
+       {
+         name: 'Hacer el almuerzo', 
+         completed:true
+       },
+       {
+         name: 'Ir al medico', 
+         completed:false
+       },
+       {
+         name: 'Pagar factura luz', 
+         completed:false,
+       }
+     ];
   const {
      item : ToDos,
      saveItem : saveToDos,
       loading , 
       error
-   } = useLocalStorage('TODOS_V1', [])
+   } = useLocalStorage('TODOS_V1', DefaulToDos)
+
+  //  creamos el estado para mostrar el modal
+  const [openModal, setOpenModal]= useState(false);
  
   // vamos a definir un estado para la busqueda de Todos
   const [searchValue, setSearchValue]= React.useState('');
@@ -37,7 +54,7 @@ function TodoProvider(props){
   else {
     searchedTodos = ToDos.filter( todo =>{
       // primero vamos a normalizar los textos. Ponemos todo en miniscula
-      const TodoText = todo.text.toLowerCase();
+      const TodoText = todo.name.toLowerCase();
       const searchText = searchValue.toLowerCase();
       // retornamos solo los que cumplen con la condicion
       return TodoText.includes(searchText)
@@ -45,9 +62,7 @@ function TodoProvider(props){
 
   }
 
-  
 
-  
   //completar todos
   const completeTodo = (name)=>{
     //vamos a buscar la posicion del toDo
@@ -62,7 +77,21 @@ function TodoProvider(props){
   //eliminar todos
   const deleteToDo = (name)=>{
     const newTodos = ToDos.filter(todo=>todo.name !== name)
+    saveToDos(newTodos)
+  }
+
+  // Añadir Todos
+  const AddTodo = (name)=>{
+    const newTodos = [...ToDos]
+    newTodos.push(
+      {
+        completed:false,
+        name
+      }
+    )
     saveToDos(newTodos )
+
+   
   }
   return(
     <TodoContext.Provider value={ {
@@ -75,6 +104,9 @@ function TodoProvider(props){
       searchedTodos, 
       completeTodo, 
       deleteToDo,
+      openModal,
+      setOpenModal,
+      AddTodo
     } } >
       {props.children}
       {/* aqui deben vivir todos los componenets que quieran acceder a las props */}

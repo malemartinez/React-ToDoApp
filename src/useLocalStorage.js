@@ -25,10 +25,11 @@ function useLocalStorage (itemName , initialValue){
 
       } catch (error) {
         setError(error)
+        setLoading(false)
       }
   
       
-    }, 1000)
+    }, 2000)
   } )
 
 
