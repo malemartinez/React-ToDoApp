@@ -5,14 +5,15 @@
 .searchBox{
   width: 90%;
   height: 30px;
-  color: white;
-  outline-color: #c0d0ef;
+  color: #4a4a4a;
+  outline-color: #fc8d7cce;
   border: none;
-  background-color:#304a6e ;
+  background-color: #ffbf9171;
   padding: 20px;
   margin-bottom:10px ;
   border-radius: 20px;
+  font-family: 'Ubuntu';
 }
 ::placeholder{
-  color: #c2c6ce;
+  color: rgba(128, 128, 128, 0.437);
 }

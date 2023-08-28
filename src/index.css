@@ -1,3 +1,13 @@
+/* colores
+  #f8a89b,
+  #fc8d7c
+  ffe8d7c9
+  fc8d7cce
+  f97482
+  FFBE9120
+ */
+
+
 *{
   margin: 0;
   padding: 0;
@@ -11,11 +21,10 @@ li{
   list-style: none;
 }
 body{
-  background-color: #668dc0;
-  color: white;
+  color: #4a4a4a;
 }
 
-#root{
+/* #root{
   
   width: 360px;
   height: auto;
@@ -24,4 +33,4 @@ body{
   border-radius: 30px;
   box-shadow:5px 5px 10px #0f1c30 ;
   background-color: rgba(255, 255, 255, 0.342);
-}
+} */

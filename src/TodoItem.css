@@ -14,8 +14,11 @@
   font-weight: bolder;
 }
 .Icon-check--active {
-  color: #003a02;
+  color: #c2c6ce;
 }
 .Icon-delete:hover {
-  color: red;
+  color: #f5563ece;
+}
+.Icon-active:hover {
+  color: #fc8d7cce;
 }

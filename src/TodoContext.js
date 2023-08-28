@@ -68,7 +68,7 @@ function TodoProvider(props){
     //vamos a buscar la posicion del toDo
     const TodoIndex = ToDos.findIndex(todo => todo.name === name)
     const newTodos = [...ToDos]
-    newTodos[TodoIndex].completed = true
+    newTodos[TodoIndex].completed = !newTodos[TodoIndex].completed
     saveToDos(newTodos )
     //enviar los datos a la base con el update de completado
    
